@@ -1,5 +1,5 @@
 {% extends 'layout/medilab.html' %}
-{% load static %}
+{% load static crispy_forms_tags  %}
 {% block doctors %}
     <section id="doctors" class="doctors">
         <div class="container">
@@ -39,3 +39,10 @@
     </section>
     <!-- End Doctors Section -->
 {% endblock doctors %}
+{% block contact %}
+    <form action="{% url 'doctors:index' %}" method="post">
+        {% csrf_token %}
+        {{ forms|crispy }}
+        <button class="btn btn-primary w-100 mt-3" type="submit">envoyer</button>
+    </form>
+{% endblock contact %}

@@ -1,6 +1,6 @@
 from msilib.schema import DrLocator
 from django.contrib import admin
-from .models import Doctor
+from .models import Doctor, Contact
 # Register your models here.
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
@@ -9,3 +9,6 @@ class DoctorAdmin(admin.ModelAdmin):
 
 # admin.site.register(Doctor)
 
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ("name","email","subject","message" ,"created_at", "modified_at")

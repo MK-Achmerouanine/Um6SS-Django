@@ -30,15 +30,22 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
+]
+EXTERNAL_APPS = [
+    'crispy_forms'
+]
+LOCAL_APPS = [
     'doctors'
 ]
+INSTALLED_APPS = DEFAULT_APPS + EXTERNAL_APPS + LOCAL_APPS
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
