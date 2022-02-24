@@ -1,4 +1,3 @@
-from msilib.schema import DrLocator
 from django.contrib import admin
 from .models import Doctor, Contact
 # Register your models here.
